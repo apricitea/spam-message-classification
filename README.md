@@ -9,22 +9,26 @@ The dataset consists of 1.143 text obtained from SMS (Short Message Service) in 
 ## Text Preprocessing 
 
 - Convert to lowercases
-- Remove punctuations
+- Remove punctuations and numbers
+- Remove stopwords
 - Text normalization (replacing slang words)
 - Stemming (reducing inflected words to their word stem, base or root form
-- Remove stopwords
-- Remove numbers
 - Remove whitespace
 
 ## Classification Model
 
-The classification model used in this project are Singular Value Decomposition (SVM), Logistic Regression, and Extreme Gradient Boosting (XGB). Hyperparameter tuning will also be performed to improve the model accuracy using Grid Search with 10 folds. Model will be validated using the test dataset and several metrics like Confusion Matrix, Classification Report, and AUC/ROC Score & Curve available in Metrics from the Scikit Learn library. 
+The classification model used in this project are Singular Value Decomposition (SVM), Logistic Regression, and Extreme Gradient Boosting (XGB). Hyperparameter tuning will also be performed to improve the model performance using Grid Search with 10 folds. Model will be validated using the test dataset and several metrics like Confusion Matrix, Classification Report, and AUC/ROC Score & Curve available in Metrics from the Scikit Learn library. 
 
 ## Result
 
 <img src="https://i.imgur.com/CIrxWnP.png"/>
 
 <img src="https://i.imgur.com/Y2rKw8T.png"/>
+
+- Comparison between the model prior to hyperparameter tuning shown that the Logistic Regression model has the best performance with accuracy of 97.38%, F1 Score of 97.6%, and AUC Score of 97.44% with only 0.02 seconds model training time.
+- Hyperparameter tuning using Grid Search resulted in high boost of the SVM model performance while little to no improvement for the Logit and XGB model (note that their model prior to tuned already have a really good performance). 
+- The tuned XGB model has the highest model training time reaching 172.84 seconds.
+- The tuned Logistic Regression model has the best performance compared to all the other models and took considerably low training time. Therefore, the model that will be used for the deployment is going to be the tuned Logistic Regression.
 
 ## Reference
 
