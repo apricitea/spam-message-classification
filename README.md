@@ -1,5 +1,11 @@
 # Spam Message Classification 
 
+## Setup
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Data Source
 
 The dataset consists of 1.143 text obtained from SMS (Short Message Service) in Indonesian language. The dataset has 574(50.22%) normal messages and 569 (49.78%) spam messages.
